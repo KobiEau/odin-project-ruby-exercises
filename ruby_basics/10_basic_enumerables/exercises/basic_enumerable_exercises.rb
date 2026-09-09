@@ -21,7 +21,7 @@ end
 def find_low_inventory(inventory_list)
   # use #select to iterate through each item of the inventory_list (a hash)
   # return a hash of items with values less than 4
-  inventory_list.select{|key,value| 
+  inventory_list.select{|_,value| 
   value < 4}
 end
 
@@ -29,7 +29,7 @@ def find_word_lengths(word_list)
   # use #reduce to iterate through each item of the word_list (an array)
   # return a hash with each word as the key and its length as the value
   # hint: look at the documentation and review the reduce examples in basic enumerable lesson
-  new_list = word_list.reduce(Hash.new()){ |length,word|
+  word_list.reduce(Hash.new()){ |length,word|
     length[word] = word.length
     length
   }
