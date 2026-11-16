@@ -8,21 +8,25 @@
 def double_all(numbers)
   # use #map
   # return a new array with every number doubled
+  numbers.map { |num| num*2 }
 end
 
 def even_numbers(numbers)
   # use #select
   # return an array with only the even numbers
+  numbers.select { |num| num.even? }
 end
 
 def without_short_words(words, min_length)
   # NEW: #reject (the opposite of #select)
   # return the words that are at least min_length characters long
+  words.reject{|word| word.length < min_length}
 end
 
 def first_negative(numbers)
   # NEW: #find (also called #detect)
   # return the first negative number, or nil if there isn't one
+  numbers.find { |num| num<0 || num === nil  }
 end
 
 # ---------- Level 2: asking questions about collections ----------
@@ -30,6 +34,7 @@ end
 def total_price(prices)
   # NEW: #sum (or use #reduce, then compare the two)
   # return the total of all prices
+  
 end
 
 def all_adults?(ages)
