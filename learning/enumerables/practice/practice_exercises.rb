@@ -34,22 +34,25 @@ end
 def total_price(prices)
   # NEW: #sum (or use #reduce, then compare the two)
   # return the total of all prices
-  
+  prices.sum
 end
 
 def all_adults?(ages)
   # NEW: #all?
   # return true if every age is 18 or older
+  ages.all?{|age| age >= 18}
 end
 
 def any_overdue?(days_left)
   # NEW: #any?
   # return true if at least one value is below 0
+  days_left.any?{|day| day < 0 }
 end
 
 def count_long_words(words)
   # NEW: #count with a block
   # return how many words are longer than 5 characters
+  words.count{|word| word.length > 5}
 end
 
 # ---------- Level 3: real-world helpers ----------
