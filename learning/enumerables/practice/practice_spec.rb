@@ -25,22 +25,22 @@ RSpec.describe 'Enumerable practice' do
   end
 
   describe 'Level 2' do
-    xit 'total_price adds up the prices' do
+    it 'total_price adds up the prices' do
       expect(total_price([1.5, 2.5, 3])).to eq(7.0)
       expect(total_price([])).to eq(0)
     end
 
-    xit 'all_adults? is true only when everyone is 18 or older' do
+    it 'all_adults? is true only when everyone is 18 or older' do
       expect(all_adults?([18, 30, 45])).to be true
       expect(all_adults?([18, 17])).to be false
     end
 
-    xit 'any_overdue? is true when any value is below zero' do
+    it 'any_overdue? is true when any value is below zero' do
       expect(any_overdue?([3, 0, -2])).to be true
       expect(any_overdue?([1, 2])).to be false
     end
 
-    xit 'count_long_words counts words longer than 5 characters' do
+    it 'count_long_words counts words longer than 5 characters' do
       expect(count_long_words(%w[apple banana kiwi cherry])).to eq(2)
     end
   end
