@@ -46,32 +46,32 @@ RSpec.describe 'Enumerable practice' do
   end
 
   describe 'Level 3' do
-    xit 'group_by_length groups words by their length' do
+    it 'group_by_length groups words by their length' do
       expect(group_by_length(%w[cat horse dog mouse]))
         .to eq({ 3 => %w[cat dog], 5 => %w[horse mouse] })
     end
 
-    xit 'splxit_pass_fail returns [passed, failed]' do
-      expect(splxit_pass_fail([40, 75, 50, 10])).to eq([[75, 50], [40, 10]])
+    it 'split_pass_fail returns [passed, failed]' do
+      expect(split_pass_fail([40, 75, 50, 10])).to eq([[75, 50], [40, 10]])
     end
 
-    xit 'word_frequencies counts each word' do
+    it 'word_frequencies counts each word' do
       expect(word_frequencies(%w[a b a c a b])).to eq({ 'a' => 3, 'b' => 2, 'c' => 1 })
     end
 
-    xit 'names_to_lengths maps each name to xits length' do
+    it 'names_to_lengths maps each name to its length' do
       expect(names_to_lengths(%w[Ann Bobby])).to eq({ 'Ann' => 3, 'Bobby' => 5 })
     end
 
-    xit 'longest_word returns the longest word' do
+    it 'longest_word returns the longest word' do
       expect(longest_word(%w[cat horse elephant dog])).to eq('elephant')
     end
 
-    xit 'longest_word returns nil for an empty array' do
+    it 'longest_word returns nil for an empty array' do
       expect(longest_word([])).to be_nil
     end
 
-    xit 'youngest_first returns names ordered by age' do
+    it 'youngest_first returns names ordered by age' do
       people = [
         { name: 'Ann', age: 30 },
         { name: 'Ben', age: 25 },
@@ -80,7 +80,7 @@ RSpec.describe 'Enumerable practice' do
       expect(youngest_first(people)).to eq(%w[Ben Ann Cy])
     end
 
-    xit 'all_tags returns one flat array of every tag' do
+    it 'all_tags returns one flat array of every tag' do
       posts = [
         { txitle: 'a', tags: %w[ruby code] },
         { txitle: 'b', tags: %w[code tips] }
