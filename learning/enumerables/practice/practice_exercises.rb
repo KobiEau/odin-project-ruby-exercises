@@ -26,7 +26,7 @@ end
 def first_negative(numbers)
   # NEW: #find (also called #detect)
   # return the first negative number, or nil if there isn't one
-  numbers.find { |num| num<0 || num === nil  }
+  numbers.find { |num| num < 0 || num === nil  }
 end
 
 # ---------- Level 2: asking questions about collections ----------
@@ -60,38 +60,46 @@ end
 def group_by_length(words)
   # NEW: #group_by
   # return a hash: word length => array of words with that length
+  words.group_by{|word| word.length}
 end
 
 def split_pass_fail(scores)
   # NEW: #partition
   # return [passed, failed]; a score of 50 or more passes
+  scores.partition{|score| score >= 50 }
 end
 
 def word_frequencies(words)
   # NEW: #tally
   # return a hash: word => how many times it appears
+  words.tally
 end
 
 def names_to_lengths(names)
-  # NEW: #each_with_object (compare it with #reduce)
-  # return a hash: name => number of characters
+  # each_with_object({}) carries an empty hash through every pass.
+  # Block params: |element, accumulator| — element first, accumulator second.
+  # On each pass we write in to acc; it is returned automatically at the end.
+  names.each_with_object({}){|el, acc| acc[el] = el.length}
 end
 
 def longest_word(words)
   # NEW: #max_by
   # return the longest word, or nil for an empty array
+  words.max_by{|obj| obj.length}
 end
 
 def youngest_first(people)
   # NEW: #sort_by
   # people is an array of hashes like { name: "Ann", age: 30 }
   # return the names, youngest person first
+  p people.sort_by{|person| person[:age]}.map { |person| person[:name]  }
 end
 
 def all_tags(posts)
   # NEW: #flat_map
-  # each post is a hash like { title: "x", tags: ["ruby", "code"] }
+  # each post is a hash like posts = { title: "x", tags: ["ruby", "code"] }
   # return one flat array of every tag from every post (keep duplicates)
+  posts.flat_map { |post|  post[:tags]}
 end
 
 # ---------- Level 4: modern Ruby you'll see in real code ----------
